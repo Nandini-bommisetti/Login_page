@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1> Main Page</h1>
+    {% if error %}
+    <h1 style="color:red">error:{{error}}</h1>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+    <label for="Num1">Enter name:</label>
+    <input type="text" name="Num1" placeholder="Enter username" required><br><br>
+    <label for="Num2">Enter password:</label>
+    <input type="password" name="Num2" placeholder="Enter password" required><br><br>
+    <button type = "submit">Login</button>
+    </form>
+
+    Dont have an account?<a href="{% url 'register_page' %}">Register</a>
+
+    {% if result %}
+    <h1>result: {{result}}</h1>
+    {% endif %}
+</body>
+</html>
